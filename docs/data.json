@@ -44,7 +44,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 33283,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "台灣虎航",
@@ -152,7 +152,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 29851,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -213,7 +213,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 23490,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -267,7 +267,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 22167,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -321,7 +321,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 22190,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -375,7 +375,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 18170,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -422,7 +422,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 22209,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -476,7 +476,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 19434,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -530,7 +530,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 19432,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -584,7 +584,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 18190,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -631,7 +631,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 20187,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -685,7 +685,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 20168,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -739,7 +739,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 19432,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -786,7 +786,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 19432,
-     "lcc": false
+     "lcc": true
     },
     {
      "airline": "星宇航空",
@@ -840,7 +840,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 23438,
-     "lcc": false
+     "lcc": true
     }
    ],
    "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMjUoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMjkoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
@@ -894,7 +894,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 23443,
-     "lcc": false
+     "lcc": true
     }
    ],
    "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMjYoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMzAoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"

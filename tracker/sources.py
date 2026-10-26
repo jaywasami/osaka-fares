@@ -11,8 +11,8 @@ import requests
 
 # Low-cost carriers flying TPE-KIX; matched against names (zh/en) and IATA codes.
 LCC_NAMES = ("tigerair", "虎航", "peach", "樂桃", "jetstar", "捷星", "scoot", "酷航",
-             "zipair", "airasia", "亞洲航空", "亞航")
-LCC_CODES = {"IT", "MM", "GK", "3K", "TR", "ZG", "D7", "FD"}
+             "zipair", "airasia", "亞洲航空", "亞航", "vietjet", "越捷")
+LCC_CODES = {"IT", "MM", "GK", "3K", "TR", "ZG", "D7", "FD", "VJ", "VZ"}
 
 
 class SourceError(Exception):
