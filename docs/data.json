@@ -1,1 +1,909 @@
-{"updated_at": null, "checked_on": null, "route": "TPE ⇄ KIX", "passengers": "2 大 1 小", "trip_days": 4, "target_price": null, "enabled": true, "finished": false, "on_fallback": false, "days": [], "history": []}
+{
+ "updated_at": "2026-10-26T19:11+08:00",
+ "checked_on": "2026-10-26",
+ "route": "TPE ⇄ KIX",
+ "passengers": "2 大 1 小",
+ "trip_days": 4,
+ "target_price": null,
+ "enabled": true,
+ "finished": false,
+ "on_fallback": true,
+ "days": [
+  {
+   "depart": "2027-04-01",
+   "return": "2027-04-05",
+   "total": 63880,
+   "lowest_ever": 63880,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 30597,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 52758,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "10:15",
+     "arrive": "14:00",
+     "price": 52758,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 33283,
+     "lcc": false
+    },
+    {
+     "airline": "台灣虎航",
+     "depart": "19:50",
+     "arrive": "21:45",
+     "price": 35081,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 62988,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMDEoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMDUoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-02",
+   "return": "2027-04-06",
+   "total": 90795,
+   "lowest_ever": 90795,
+   "holiday": true,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 42597,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "10:15",
+     "arrive": "14:00",
+     "price": 56505,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 59499,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "19:50",
+     "arrive": "21:45",
+     "price": 48198,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 62988,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "15:10",
+     "arrive": "17:05",
+     "price": 62988,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMDIoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMDYoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-03",
+   "return": "2027-04-07",
+   "total": 78448,
+   "lowest_ever": 78448,
+   "holiday": true,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 48597,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "10:15",
+     "arrive": "14:00",
+     "price": 62682,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 68484,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 29851,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 62988,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "15:10",
+     "arrive": "17:05",
+     "price": 62988,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMDMoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMDcoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-04",
+   "return": "2027-04-08",
+   "total": 48939,
+   "lowest_ever": 48939,
+   "holiday": true,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "14:15",
+     "arrive": "18:00",
+     "price": 27597,
+     "lcc": true
+    },
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 36597,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "10:15",
+     "arrive": "14:00",
+     "price": 43584,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "19:50",
+     "arrive": "21:45",
+     "price": 21342,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 23490,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "15:10",
+     "arrive": "17:05",
+     "price": 29915,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMDQoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMDgoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-05",
+   "return": "2027-04-09",
+   "total": 42339,
+   "lowest_ever": 42339,
+   "holiday": true,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 20997,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 36285,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "10:15",
+     "arrive": "14:00",
+     "price": 36285,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "21:05",
+     "arrive": "23:00",
+     "price": 21342,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 22167,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "15:10",
+     "arrive": "17:05",
+     "price": 29915,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMDUoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMDkoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-08",
+   "return": "2027-04-12",
+   "total": 38912,
+   "lowest_ever": 38912,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 19497,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 19683,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 26925,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "19:50",
+     "arrive": "21:45",
+     "price": 19415,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 22190,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 29915,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMDgoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMTIoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-11",
+   "return": "2027-04-15",
+   "total": 31312,
+   "lowest_ever": 31312,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 16497,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 19683,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 26925,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "19:50",
+     "arrive": "21:45",
+     "price": 14815,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 18170,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 24942,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMTEoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMTUoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-13",
+   "return": "2027-04-17",
+   "total": 38406,
+   "lowest_ever": 38406,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 16197,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 19683,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 26925,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 22209,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "15:10",
+     "arrive": "17:05",
+     "price": 27863,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMTMoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMTcoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-15",
+   "return": "2027-04-19",
+   "total": 33996,
+   "lowest_ever": 33996,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 16197,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 20640,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 26925,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "19:50",
+     "arrive": "21:45",
+     "price": 17799,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 19434,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 24942,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMTUoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMTkoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-16",
+   "return": "2027-04-20",
+   "total": 32317,
+   "lowest_ever": 32317,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 16197,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 20640,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 26925,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "19:50",
+     "arrive": "21:45",
+     "price": 16120,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 19432,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 24942,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMTYoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMjAoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-18",
+   "return": "2027-04-22",
+   "total": 32317,
+   "lowest_ever": 32317,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 16197,
+     "lcc": true
+    },
+    {
+     "airline": "台灣虎航",
+     "depart": "14:15",
+     "arrive": "18:00",
+     "price": 16197,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 19683,
+     "lcc": true
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "19:50",
+     "arrive": "21:45",
+     "price": 16120,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 18190,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 24942,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMTgoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMjIoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-20",
+   "return": "2027-04-24",
+   "total": 33384,
+   "lowest_ever": 33384,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "15:15",
+     "arrive": "19:00",
+     "price": 13197,
+     "lcc": true
+    },
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 16197,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 19683,
+     "lcc": true
+    }
+   ],
+   "ret": [
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 20187,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 24942,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "15:10",
+     "arrive": "17:05",
+     "price": 27863,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMjAoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMjQoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-21",
+   "return": "2027-04-25",
+   "total": 33996,
+   "lowest_ever": 33996,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 16197,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 19683,
+     "lcc": true
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "19:50",
+     "arrive": "21:45",
+     "price": 17799,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 20168,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 24942,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMjEoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMjUoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-22",
+   "return": "2027-04-26",
+   "total": 29317,
+   "lowest_ever": 29317,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "15:15",
+     "arrive": "19:00",
+     "price": 13197,
+     "lcc": true
+    },
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 16197,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 20640,
+     "lcc": true
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "19:50",
+     "arrive": "21:45",
+     "price": 16120,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 19432,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 24942,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMjIoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMjYoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-24",
+   "return": "2027-04-28",
+   "total": 39115,
+   "lowest_ever": 39115,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 19683,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 26925,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "10:15",
+     "arrive": "14:00",
+     "price": 26925,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 19432,
+     "lcc": false
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "13:25",
+     "arrive": "15:20",
+     "price": 24942,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMjQoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMjgoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-25",
+   "return": "2027-04-29",
+   "total": 36039,
+   "lowest_ever": 36039,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 14697,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 19683,
+     "lcc": true
+    },
+    {
+     "airline": "星宇航空",
+     "depart": "08:30",
+     "arrive": "12:15",
+     "price": 26925,
+     "lcc": false
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "11:45",
+     "arrive": "13:45",
+     "price": 21342,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 23438,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMjUoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMjkoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  },
+  {
+   "depart": "2027-04-26",
+   "return": "2027-04-30",
+   "total": 33339,
+   "lowest_ever": 33339,
+   "holiday": false,
+   "out": [
+    {
+     "airline": "台灣虎航",
+     "depart": "15:15",
+     "arrive": "19:00",
+     "price": 11997,
+     "lcc": true
+    },
+    {
+     "airline": "台灣虎航",
+     "depart": "06:40",
+     "arrive": "10:25",
+     "price": 13197,
+     "lcc": true
+    },
+    {
+     "airline": "亞洲航空",
+     "depart": "15:40",
+     "arrive": "19:30",
+     "price": 14913,
+     "lcc": true
+    }
+   ],
+   "ret": [
+    {
+     "airline": "台灣虎航",
+     "depart": "11:15",
+     "arrive": "13:10",
+     "price": 21342,
+     "lcc": true
+    },
+    {
+     "airline": "台灣虎航",
+     "depart": "21:05",
+     "arrive": "23:00",
+     "price": 21342,
+     "lcc": true
+    },
+    {
+     "airline": "泰越捷航空",
+     "depart": "12:25",
+     "arrive": "14:25",
+     "price": 23443,
+     "lcc": false
+    }
+   ],
+   "link": "https://www.google.com/travel/flights/search?tfs=GhwSCjIwMjctMDQtMjYoAGoFEgNUUEVyBRIDS0lYGhwSCjIwMjctMDQtMzAoAGoFEgNLSVhyBRIDVFBFQgMBAQJIAZgBAQ==&hl=zh-TW&curr=TWD"
+  }
+ ],
+ "history": [
+  {
+   "date": "2026-10-26",
+   "min": 29317
+  }
+ ]
+}
