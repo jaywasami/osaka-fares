@@ -4,6 +4,8 @@
  "route": "TPE ⇄ KIX",
  "passengers": "2 大 1 小",
  "trip_days": 4,
+ "last_depart": "2027-04-26",
+ "checked_bags": 2,
  "target_price": null,
  "enabled": true,
  "finished": false,
@@ -14,6 +16,7 @@
    "return": "2027-04-05",
    "total": 63880,
    "lowest_ever": 63880,
+   "total_bag": 67880,
    "holiday": false,
    "out": [
     {
@@ -21,6 +24,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 30597,
+     "price_bag": 32597,
      "lcc": true
     },
     {
@@ -28,6 +32,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 52758,
+     "price_bag": 52758,
      "lcc": false
     },
     {
@@ -35,6 +40,7 @@
      "depart": "10:15",
      "arrive": "14:00",
      "price": 52758,
+     "price_bag": 52758,
      "lcc": false
     }
    ],
@@ -44,6 +50,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 33283,
+     "price_bag": 35283,
      "lcc": true
     },
     {
@@ -51,6 +58,7 @@
      "depart": "19:50",
      "arrive": "21:45",
      "price": 35081,
+     "price_bag": 37081,
      "lcc": true
     },
     {
@@ -58,6 +66,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 62988,
+     "price_bag": 62988,
      "lcc": false
     }
    ],
@@ -68,6 +77,7 @@
    "return": "2027-04-06",
    "total": 90795,
    "lowest_ever": 90795,
+   "total_bag": 94795,
    "holiday": true,
    "out": [
     {
@@ -75,6 +85,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 42597,
+     "price_bag": 44597,
      "lcc": true
     },
     {
@@ -82,6 +93,7 @@
      "depart": "10:15",
      "arrive": "14:00",
      "price": 56505,
+     "price_bag": 56505,
      "lcc": false
     },
     {
@@ -89,6 +101,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 59499,
+     "price_bag": 59499,
      "lcc": false
     }
    ],
@@ -98,6 +111,7 @@
      "depart": "19:50",
      "arrive": "21:45",
      "price": 48198,
+     "price_bag": 50198,
      "lcc": true
     },
     {
@@ -105,6 +119,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 62988,
+     "price_bag": 62988,
      "lcc": false
     },
     {
@@ -112,6 +127,7 @@
      "depart": "15:10",
      "arrive": "17:05",
      "price": 62988,
+     "price_bag": 62988,
      "lcc": false
     }
    ],
@@ -122,6 +138,7 @@
    "return": "2027-04-07",
    "total": 78448,
    "lowest_ever": 78448,
+   "total_bag": 82448,
    "holiday": true,
    "out": [
     {
@@ -129,6 +146,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 48597,
+     "price_bag": 50597,
      "lcc": true
     },
     {
@@ -136,6 +154,7 @@
      "depart": "10:15",
      "arrive": "14:00",
      "price": 62682,
+     "price_bag": 62682,
      "lcc": false
     },
     {
@@ -143,6 +162,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 68484,
+     "price_bag": 68484,
      "lcc": false
     }
    ],
@@ -152,6 +172,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 29851,
+     "price_bag": 31851,
      "lcc": true
     },
     {
@@ -159,6 +180,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 62988,
+     "price_bag": 62988,
      "lcc": false
     },
     {
@@ -166,6 +188,7 @@
      "depart": "15:10",
      "arrive": "17:05",
      "price": 62988,
+     "price_bag": 62988,
      "lcc": false
     }
    ],
@@ -176,6 +199,7 @@
    "return": "2027-04-08",
    "total": 48939,
    "lowest_ever": 48939,
+   "total_bag": 52939,
    "holiday": true,
    "out": [
     {
@@ -183,6 +207,7 @@
      "depart": "14:15",
      "arrive": "18:00",
      "price": 27597,
+     "price_bag": 29597,
      "lcc": true
     },
     {
@@ -190,6 +215,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 36597,
+     "price_bag": 38597,
      "lcc": true
     },
     {
@@ -197,6 +223,7 @@
      "depart": "10:15",
      "arrive": "14:00",
      "price": 43584,
+     "price_bag": 43584,
      "lcc": false
     }
    ],
@@ -206,6 +233,7 @@
      "depart": "19:50",
      "arrive": "21:45",
      "price": 21342,
+     "price_bag": 23342,
      "lcc": true
     },
     {
@@ -213,6 +241,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 23490,
+     "price_bag": 25490,
      "lcc": true
     },
     {
@@ -220,6 +249,7 @@
      "depart": "15:10",
      "arrive": "17:05",
      "price": 29915,
+     "price_bag": 29915,
      "lcc": false
     }
    ],
@@ -230,6 +260,7 @@
    "return": "2027-04-09",
    "total": 42339,
    "lowest_ever": 42339,
+   "total_bag": 46339,
    "holiday": true,
    "out": [
     {
@@ -237,6 +268,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 20997,
+     "price_bag": 22997,
      "lcc": true
     },
     {
@@ -244,6 +276,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 36285,
+     "price_bag": 36285,
      "lcc": false
     },
     {
@@ -251,6 +284,7 @@
      "depart": "10:15",
      "arrive": "14:00",
      "price": 36285,
+     "price_bag": 36285,
      "lcc": false
     }
    ],
@@ -260,6 +294,7 @@
      "depart": "21:05",
      "arrive": "23:00",
      "price": 21342,
+     "price_bag": 23342,
      "lcc": true
     },
     {
@@ -267,6 +302,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 22167,
+     "price_bag": 24167,
      "lcc": true
     },
     {
@@ -274,6 +310,7 @@
      "depart": "15:10",
      "arrive": "17:05",
      "price": 29915,
+     "price_bag": 29915,
      "lcc": false
     }
    ],
@@ -284,6 +321,7 @@
    "return": "2027-04-12",
    "total": 38912,
    "lowest_ever": 38912,
+   "total_bag": 42912,
    "holiday": false,
    "out": [
     {
@@ -291,6 +329,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 19497,
+     "price_bag": 21497,
      "lcc": true
     },
     {
@@ -298,6 +337,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 19683,
+     "price_bag": 21683,
      "lcc": true
     },
     {
@@ -305,6 +345,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 26925,
+     "price_bag": 26925,
      "lcc": false
     }
    ],
@@ -314,6 +355,7 @@
      "depart": "19:50",
      "arrive": "21:45",
      "price": 19415,
+     "price_bag": 21415,
      "lcc": true
     },
     {
@@ -321,6 +363,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 22190,
+     "price_bag": 24190,
      "lcc": true
     },
     {
@@ -328,6 +371,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 29915,
+     "price_bag": 29915,
      "lcc": false
     }
    ],
@@ -338,6 +382,7 @@
    "return": "2027-04-15",
    "total": 31312,
    "lowest_ever": 31312,
+   "total_bag": 35312,
    "holiday": false,
    "out": [
     {
@@ -345,6 +390,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 16497,
+     "price_bag": 18497,
      "lcc": true
     },
     {
@@ -352,6 +398,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 19683,
+     "price_bag": 21683,
      "lcc": true
     },
     {
@@ -359,6 +406,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 26925,
+     "price_bag": 26925,
      "lcc": false
     }
    ],
@@ -368,6 +416,7 @@
      "depart": "19:50",
      "arrive": "21:45",
      "price": 14815,
+     "price_bag": 16815,
      "lcc": true
     },
     {
@@ -375,6 +424,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 18170,
+     "price_bag": 20170,
      "lcc": true
     },
     {
@@ -382,6 +432,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 24942,
+     "price_bag": 24942,
      "lcc": false
     }
    ],
@@ -392,6 +443,7 @@
    "return": "2027-04-17",
    "total": 38406,
    "lowest_ever": 38406,
+   "total_bag": 42406,
    "holiday": false,
    "out": [
     {
@@ -399,6 +451,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 16197,
+     "price_bag": 18197,
      "lcc": true
     },
     {
@@ -406,6 +459,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 19683,
+     "price_bag": 21683,
      "lcc": true
     },
     {
@@ -413,6 +467,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 26925,
+     "price_bag": 26925,
      "lcc": false
     }
    ],
@@ -422,6 +477,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 22209,
+     "price_bag": 24209,
      "lcc": true
     },
     {
@@ -429,6 +485,7 @@
      "depart": "15:10",
      "arrive": "17:05",
      "price": 27863,
+     "price_bag": 27863,
      "lcc": false
     }
    ],
@@ -439,6 +496,7 @@
    "return": "2027-04-19",
    "total": 33996,
    "lowest_ever": 33996,
+   "total_bag": 37996,
    "holiday": false,
    "out": [
     {
@@ -446,6 +504,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 16197,
+     "price_bag": 18197,
      "lcc": true
     },
     {
@@ -453,6 +512,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 20640,
+     "price_bag": 22640,
      "lcc": true
     },
     {
@@ -460,6 +520,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 26925,
+     "price_bag": 26925,
      "lcc": false
     }
    ],
@@ -469,6 +530,7 @@
      "depart": "19:50",
      "arrive": "21:45",
      "price": 17799,
+     "price_bag": 19799,
      "lcc": true
     },
     {
@@ -476,6 +538,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 19434,
+     "price_bag": 21434,
      "lcc": true
     },
     {
@@ -483,6 +546,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 24942,
+     "price_bag": 24942,
      "lcc": false
     }
    ],
@@ -493,6 +557,7 @@
    "return": "2027-04-20",
    "total": 32317,
    "lowest_ever": 32317,
+   "total_bag": 36317,
    "holiday": false,
    "out": [
     {
@@ -500,6 +565,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 16197,
+     "price_bag": 18197,
      "lcc": true
     },
     {
@@ -507,6 +573,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 20640,
+     "price_bag": 22640,
      "lcc": true
     },
     {
@@ -514,6 +581,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 26925,
+     "price_bag": 26925,
      "lcc": false
     }
    ],
@@ -523,6 +591,7 @@
      "depart": "19:50",
      "arrive": "21:45",
      "price": 16120,
+     "price_bag": 18120,
      "lcc": true
     },
     {
@@ -530,6 +599,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 19432,
+     "price_bag": 21432,
      "lcc": true
     },
     {
@@ -537,6 +607,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 24942,
+     "price_bag": 24942,
      "lcc": false
     }
    ],
@@ -547,6 +618,7 @@
    "return": "2027-04-22",
    "total": 32317,
    "lowest_ever": 32317,
+   "total_bag": 36317,
    "holiday": false,
    "out": [
     {
@@ -554,6 +626,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 16197,
+     "price_bag": 18197,
      "lcc": true
     },
     {
@@ -561,6 +634,7 @@
      "depart": "14:15",
      "arrive": "18:00",
      "price": 16197,
+     "price_bag": 18197,
      "lcc": true
     },
     {
@@ -568,6 +642,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 19683,
+     "price_bag": 21683,
      "lcc": true
     }
    ],
@@ -577,6 +652,7 @@
      "depart": "19:50",
      "arrive": "21:45",
      "price": 16120,
+     "price_bag": 18120,
      "lcc": true
     },
     {
@@ -584,6 +660,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 18190,
+     "price_bag": 20190,
      "lcc": true
     },
     {
@@ -591,6 +668,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 24942,
+     "price_bag": 24942,
      "lcc": false
     }
    ],
@@ -601,6 +679,7 @@
    "return": "2027-04-24",
    "total": 33384,
    "lowest_ever": 33384,
+   "total_bag": 37384,
    "holiday": false,
    "out": [
     {
@@ -608,6 +687,7 @@
      "depart": "15:15",
      "arrive": "19:00",
      "price": 13197,
+     "price_bag": 15197,
      "lcc": true
     },
     {
@@ -615,6 +695,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 16197,
+     "price_bag": 18197,
      "lcc": true
     },
     {
@@ -622,6 +703,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 19683,
+     "price_bag": 21683,
      "lcc": true
     }
    ],
@@ -631,6 +713,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 20187,
+     "price_bag": 22187,
      "lcc": true
     },
     {
@@ -638,6 +721,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 24942,
+     "price_bag": 24942,
      "lcc": false
     },
     {
@@ -645,6 +729,7 @@
      "depart": "15:10",
      "arrive": "17:05",
      "price": 27863,
+     "price_bag": 27863,
      "lcc": false
     }
    ],
@@ -655,6 +740,7 @@
    "return": "2027-04-25",
    "total": 33996,
    "lowest_ever": 33996,
+   "total_bag": 37996,
    "holiday": false,
    "out": [
     {
@@ -662,6 +748,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 16197,
+     "price_bag": 18197,
      "lcc": true
     },
     {
@@ -669,6 +756,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 19683,
+     "price_bag": 21683,
      "lcc": true
     }
    ],
@@ -678,6 +766,7 @@
      "depart": "19:50",
      "arrive": "21:45",
      "price": 17799,
+     "price_bag": 19799,
      "lcc": true
     },
     {
@@ -685,6 +774,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 20168,
+     "price_bag": 22168,
      "lcc": true
     },
     {
@@ -692,6 +782,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 24942,
+     "price_bag": 24942,
      "lcc": false
     }
    ],
@@ -702,6 +793,7 @@
    "return": "2027-04-26",
    "total": 29317,
    "lowest_ever": 29317,
+   "total_bag": 33317,
    "holiday": false,
    "out": [
     {
@@ -709,6 +801,7 @@
      "depart": "15:15",
      "arrive": "19:00",
      "price": 13197,
+     "price_bag": 15197,
      "lcc": true
     },
     {
@@ -716,6 +809,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 16197,
+     "price_bag": 18197,
      "lcc": true
     },
     {
@@ -723,6 +817,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 20640,
+     "price_bag": 22640,
      "lcc": true
     }
    ],
@@ -732,6 +827,7 @@
      "depart": "19:50",
      "arrive": "21:45",
      "price": 16120,
+     "price_bag": 18120,
      "lcc": true
     },
     {
@@ -739,6 +835,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 19432,
+     "price_bag": 21432,
      "lcc": true
     },
     {
@@ -746,6 +843,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 24942,
+     "price_bag": 24942,
      "lcc": false
     }
    ],
@@ -756,6 +854,7 @@
    "return": "2027-04-28",
    "total": 39115,
    "lowest_ever": 39115,
+   "total_bag": 43115,
    "holiday": false,
    "out": [
     {
@@ -763,6 +862,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 19683,
+     "price_bag": 21683,
      "lcc": true
     },
     {
@@ -770,6 +870,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 26925,
+     "price_bag": 26925,
      "lcc": false
     },
     {
@@ -777,6 +878,7 @@
      "depart": "10:15",
      "arrive": "14:00",
      "price": 26925,
+     "price_bag": 26925,
      "lcc": false
     }
    ],
@@ -786,6 +888,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 19432,
+     "price_bag": 21432,
      "lcc": true
     },
     {
@@ -793,6 +896,7 @@
      "depart": "13:25",
      "arrive": "15:20",
      "price": 24942,
+     "price_bag": 24942,
      "lcc": false
     }
    ],
@@ -803,6 +907,7 @@
    "return": "2027-04-29",
    "total": 36039,
    "lowest_ever": 36039,
+   "total_bag": 40039,
    "holiday": false,
    "out": [
     {
@@ -810,6 +915,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 14697,
+     "price_bag": 16697,
      "lcc": true
     },
     {
@@ -817,6 +923,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 19683,
+     "price_bag": 21683,
      "lcc": true
     },
     {
@@ -824,6 +931,7 @@
      "depart": "08:30",
      "arrive": "12:15",
      "price": 26925,
+     "price_bag": 26925,
      "lcc": false
     }
    ],
@@ -833,6 +941,7 @@
      "depart": "11:45",
      "arrive": "13:45",
      "price": 21342,
+     "price_bag": 23342,
      "lcc": true
     },
     {
@@ -840,6 +949,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 23438,
+     "price_bag": 25438,
      "lcc": true
     }
    ],
@@ -850,6 +960,7 @@
    "return": "2027-04-30",
    "total": 33339,
    "lowest_ever": 33339,
+   "total_bag": 37339,
    "holiday": false,
    "out": [
     {
@@ -857,6 +968,7 @@
      "depart": "15:15",
      "arrive": "19:00",
      "price": 11997,
+     "price_bag": 13997,
      "lcc": true
     },
     {
@@ -864,6 +976,7 @@
      "depart": "06:40",
      "arrive": "10:25",
      "price": 13197,
+     "price_bag": 15197,
      "lcc": true
     },
     {
@@ -871,6 +984,7 @@
      "depart": "15:40",
      "arrive": "19:30",
      "price": 14913,
+     "price_bag": 16913,
      "lcc": true
     }
    ],
@@ -880,6 +994,7 @@
      "depart": "11:15",
      "arrive": "13:10",
      "price": 21342,
+     "price_bag": 23342,
      "lcc": true
     },
     {
@@ -887,6 +1002,7 @@
      "depart": "21:05",
      "arrive": "23:00",
      "price": 21342,
+     "price_bag": 23342,
      "lcc": true
     },
     {
@@ -894,6 +1010,7 @@
      "depart": "12:25",
      "arrive": "14:25",
      "price": 23443,
+     "price_bag": 25443,
      "lcc": true
     }
    ],
@@ -905,6 +1022,5 @@
    "date": "2026-10-26",
    "min": 29317
   }
- ],
- "last_depart": "2027-04-26"
+ ]
 }
