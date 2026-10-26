@@ -104,6 +104,7 @@ class Fetcher:
     def __init__(self, cfg: dict, state: dict, fake: bool):
         self.cfg, self.state, self.fake = cfg, state, fake
         self.used_ignav = False
+        self.google_streak = 0  # legs in a row where Google failed every retry
         self.messages: list[str] = []
         self.errors: list[str] = []
 
@@ -122,21 +123,29 @@ class Fetcher:
         args = (origin, dest, d, self.cfg["adults"], self.cfg["children"])
         if self.fake:
             return fake_source(*args)
-        try:
-            return sources.google_flights(*args)
-        except sources.SourceError as e:
-            self.errors.append(f"{d} {origin}→{dest}: {e}")
+        # Google sometimes answers "no flights found" when throttling; retry before using the backup,
+        # but stop retrying once it looks blocked outright so the run stays within the job time limit.
+        for wait in (0, 10, 25) if self.google_streak < 3 else (0,):
+            time.sleep(wait)
+            try:
+                res = sources.google_flights(*args)
+                self.google_streak = 0
+                return res
+            except sources.SourceError as e:
+                err = e
+        self.google_streak += 1
+        self.errors.append(f"{d} {origin}→{dest}: {err}")
         if not os.environ.get("IGNAV_API_KEY") or not self.ignav_allowed():
             return []
         try:
             res = sources.ignav(*args)
         except sources.SourceError as e:
             self.errors.append(f"{d} {origin}→{dest}: {e}")
+            if not str(e).startswith("ignav: HTTP"):  # Ignav does not bill failed (4xx/5xx) requests
+                self.state["ignav_calls"] = self.state.get("ignav_calls", 0) + 1
             return []
-        finally:
-            # Ignav does not bill failed (4xx/5xx) requests; count everything to stay on the safe side.
-            self.state["ignav_calls"] = self.state.get("ignav_calls", 0) + 1
-            self.used_ignav = True
+        self.state["ignav_calls"] = self.state.get("ignav_calls", 0) + 1
+        self.used_ignav = True
         calls, cfg = self.state["ignav_calls"], self.cfg
         if calls >= cfg["ignav_warn_at"] and not self.state.get("quota_warned"):
             self.state["quota_warned"] = True
@@ -163,6 +172,21 @@ def run(args) -> int:
     if args.test_message:
         ok = notify.send(with_link("✅ 測試訊息：台北—大阪機票追蹤已連上 Telegram。"))
         print("test message sent" if ok else "test message NOT sent")
+
+    if args.ignav_check:
+        # One real Ignav call so its response format can be checked in the Actions log.
+        d = cfg["first_depart"]
+        try:
+            raw = sources.ignav_raw(cfg["origin"], cfg["destination"], d, cfg["adults"], cfg["children"])
+            its = raw.get("itineraries", [])
+            print(f"[ignav-check] {len(its)} itineraries; top-level keys: {sorted(raw)}")
+            print("[ignav-check] first itinerary:", json.dumps(its[0] if its else None, ensure_ascii=False)[:1500])
+            state["ignav_calls"] = state.get("ignav_calls", 0) + 1
+            print("[ignav-check] parsed:", sources.parse_ignav(raw)[:3])
+        except sources.SourceError as e:
+            print("[ignav-check] failed:", e)
+        save_json(STATE, state)
+        return 0
 
     first, last = date.fromisoformat(cfg["first_depart"]), date.fromisoformat(cfg["last_depart"])
     departs = [first + timedelta(days=i) for i in range((last - first).days + 1)]
@@ -335,6 +359,7 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--test-message", action="store_true", help="send a Telegram test message")
     p.add_argument("--fake", action="store_true", help="use random prices instead of real sources")
+    p.add_argument("--ignav-check", action="store_true", help="make one Ignav call and print its response")
     sys.exit(run(p.parse_args()))
 
 

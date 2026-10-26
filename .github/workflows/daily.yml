@@ -9,6 +9,10 @@ on:
         description: "順便送一則 Telegram 測試訊息"
         type: boolean
         default: false
+      ignav_check:
+        description: "只測試一次 Ignav 備援（不查價）"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -38,7 +42,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           IGNAV_API_KEY: ${{ secrets.IGNAV_API_KEY }}
-        run: python -m tracker.run ${{ inputs.test_message && '--test-message' || '' }}
+        run: python -m tracker.run ${{ inputs.test_message && '--test-message' || '' }} ${{ inputs.ignav_check && '--ignav-check' || '' }}
 
       - name: 存回資料
         run: |

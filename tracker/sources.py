@@ -63,15 +63,33 @@ def google_flights(origin: str, dest: str, date: str, adults: int, children: int
 
 
 IGNAV_URL = "https://ignav.com/api/fares/one-way"
+_rates: dict[str, float] = {}
 
 
-def ignav(origin: str, dest: str, date: str, adults: int, children: int) -> list[dict]:
+def to_twd(amount: float, currency: str) -> int:
+    """Convert a price to TWD with a free daily exchange-rate feed (cached per run)."""
+    if currency in (None, "", "TWD"):
+        return int(round(amount))
+    if currency not in _rates:
+        try:
+            r = requests.get(f"https://open.er-api.com/v6/latest/{currency}", timeout=30)
+            _rates[currency] = float(r.json()["rates"]["TWD"])
+        except (requests.RequestException, KeyError, ValueError) as e:
+            raise SourceError(f"ignav: cannot convert {currency} to TWD: {e}") from e
+    return int(round(amount * _rates[currency]))
+
+
+def _name(v) -> str:
+    return (v.get("name") or v.get("code") or "") if isinstance(v, dict) else (v or "")
+
+
+def ignav_raw(origin: str, dest: str, date: str, adults: int, children: int) -> dict:
     key = os.environ.get("IGNAV_API_KEY")
     if not key:
         raise SourceError("ignav: IGNAV_API_KEY not set")
     body = {"origin": origin, "destination": dest, "departure_date": date,
             "adults": adults, "children": children, "cabin_class": "economy",
-            "max_stops": 0, "currency": "TWD", "market": "TW"}
+            "max_stops": 0, "market": "TW"}
     try:
         resp = requests.post(IGNAV_URL, json=body, timeout=60,
                              headers={"X-Api-Key": key, "Content-Type": "application/json"})
@@ -79,26 +97,31 @@ def ignav(origin: str, dest: str, date: str, adults: int, children: int) -> list
         raise SourceError(f"ignav: {e}") from e
     if resp.status_code != 200:
         raise SourceError(f"ignav: HTTP {resp.status_code} {resp.text[:200]}")
+    return resp.json()
 
+
+def ignav(origin: str, dest: str, date: str, adults: int, children: int) -> list[dict]:
+    return parse_ignav(ignav_raw(origin, dest, date, adults, children))
+
+
+def parse_ignav(data: dict) -> list[dict]:
     out = []
-    for it in resp.json().get("itineraries", []):
+    for it in data.get("itineraries", []):
         price = (it.get("price") or {})
         segs = (it.get("outbound") or {}).get("segments") or []
         if len(segs) != 1 or price.get("amount") is None:
             continue
-        if price.get("currency") not in (None, "TWD"):
-            raise SourceError(f"ignav: unexpected currency {price.get('currency')}")
         s = segs[0]
         dep = s.get("departure_time_local") or ""
         arr = s.get("arrival_time_local") or ""
         code = s.get("marketing_carrier_code") or ""
-        name = (it.get("outbound") or {}).get("carrier") or s.get("operating_carrier_name") or code
+        name = _name((it.get("outbound") or {}).get("carrier")) or _name(s.get("operating_carrier_name")) or code
         out.append({
             "airline": name,
             "depart": dep[11:16],
             "arrive": arr[11:16],
             "overnight": arr[:10] != dep[:10],
-            "price": int(round(float(price["amount"]))),
+            "price": to_twd(float(price["amount"]), price.get("currency")),
             "lcc": is_lcc(name, code),
             "source": "ignav",
         })
