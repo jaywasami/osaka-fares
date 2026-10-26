@@ -42,13 +42,17 @@ function bars(days, selected, onPick, lastDepart) {
     }
   }
   days.forEach((d, i) => {
+    // Invisible full-height target: the bars themselves are too thin to tap on a phone.
+    g += `<rect class="hit" data-i="${i}" x="${cx(slotOf(d.depart)) - slot / 2}" y="${T}" width="${slot}" height="${H - T}"/>`;
+  });
+  days.forEach((d, i) => {
     const x = cx(slotOf(d.depart)) - bw / 2;
     const cls = ["bar", d.holiday ? "holiday" : "", d.depart === selected ? "sel" : ""].join(" ");
     g += `<rect class="${cls}" data-i="${i}" x="${x}" y="${y(bagTotal(d))}" width="${bw}" height="${y(0) - y(bagTotal(d))}" rx="2">` +
       `<title>${md(d.depart)} ${money(bagTotal(d))}</title></rect>`;
   });
   $("bars").innerHTML = svg(W, H, g);
-  $("bars").querySelectorAll("rect.bar").forEach((r) => r.addEventListener("click", () => onPick(days[+r.dataset.i])));
+  $("bars").querySelectorAll("rect.hit, rect.bar").forEach((r) => r.addEventListener("click", () => onPick(days[+r.dataset.i])));
   const missing = n - days.length;
   $("missing").textContent = missing > 0 ? `空白處 = 今天沒查到完整價格的出發日（${missing} 天），明天會再查。` : "";
 }

@@ -53,7 +53,8 @@ h2 { font-size: 1.05rem; margin: 0 0 2px; }
 .chart { width: 100%; overflow: hidden; }
 .chart svg { display: block; width: 100%; height: auto; }
 .chart text { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
-.bar { fill: var(--accent); cursor: pointer; }
+.bar { fill: var(--accent); cursor: pointer; pointer-events: none; }
+.hit { fill: transparent; cursor: pointer; }
 .bar.holiday { fill: var(--holiday); }
 .bar.sel { stroke: var(--ink); stroke-width: 2; }
 .grid { stroke: var(--line); }
