@@ -339,6 +339,7 @@ def build_site(cfg: dict, state: dict, now: datetime, finished: bool) -> None:
         "route": f"{cfg['origin']} ⇄ {cfg['destination']}",
         "passengers": f"{cfg['adults']} 大 {cfg['children']} 小",
         "trip_days": cfg["trip_days"],
+        "last_depart": cfg["last_depart"],
         "target_price": cfg.get("target_price"),
         "enabled": cfg["enabled"],
         "finished": finished,

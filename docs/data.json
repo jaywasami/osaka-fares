@@ -7,7 +7,7 @@
  "target_price": null,
  "enabled": true,
  "finished": false,
- "on_fallback": true,
+ "on_fallback": false,
  "days": [
   {
    "depart": "2027-04-01",
@@ -905,5 +905,6 @@
    "date": "2026-10-26",
    "min": 29317
   }
- ]
+ ],
+ "last_depart": "2027-04-26"
 }

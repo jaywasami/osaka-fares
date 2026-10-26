@@ -19,25 +19,36 @@ function niceTicks(lo, hi, n = 4) {
   return ticks;
 }
 
-function bars(days, selected, onPick) {
+function bars(days, selected, onPick, lastDepart) {
+  // One fixed slot per calendar day, so a day with no price leaves a gap instead of shifting the labels.
   const W = 400, H = 190, L = 44, R = 4, T = 8, B = 22;
+  const DAY = 86400000, t0 = Date.parse(days[0].depart);
+  const n = Math.round((Date.parse(lastDepart || days[days.length - 1].depart) - t0) / DAY) + 1;
+  const slotOf = (iso) => Math.round((Date.parse(iso) - t0) / DAY);
   const max = Math.max(...days.map((d) => d.total));
   const ticks = niceTicks(0, max);
   const top = ticks[ticks.length - 1];
   const y = (v) => T + (H - T - B) * (1 - v / top);
-  const slot = (W - L - R) / days.length, bw = Math.max(4, slot * 0.7);
+  const slot = (W - L - R) / n, bw = Math.max(3, slot * 0.7);
+  const cx = (i) => L + i * slot + slot / 2;
   let g = ticks.map((t) => `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}"/>` +
     `<text x="${L - 6}" y="${y(t) + 4}" text-anchor="end">${short(t)}</text>`).join("");
+  for (let i = 0; i < n; i++) {
+    const d = new Date(t0 + i * DAY), day = d.getUTCDate();
+    if (i === 0 || (n > 14 ? day % 5 === 0 : true)) {
+      g += `<text x="${cx(i)}" y="${H - 6}" text-anchor="middle">${d.getUTCMonth() + 1}/${day}</text>`;
+    }
+  }
   days.forEach((d, i) => {
-    const x = L + i * slot + (slot - bw) / 2;
+    const x = cx(slotOf(d.depart)) - bw / 2;
     const cls = ["bar", d.holiday ? "holiday" : "", d.depart === selected ? "sel" : ""].join(" ");
     g += `<rect class="${cls}" data-i="${i}" x="${x}" y="${y(d.total)}" width="${bw}" height="${y(0) - y(d.total)}" rx="2">` +
       `<title>${md(d.depart)} ${money(d.total)}</title></rect>`;
-    const every = days.length > 14 ? 5 : 1, day = +d.depart.slice(8);
-    if (i === 0 || day % every === 0) g += `<text x="${x + bw / 2}" y="${H - 6}" text-anchor="middle">${md(d.depart, false)}</text>`;
   });
   $("bars").innerHTML = svg(W, H, g);
   $("bars").querySelectorAll("rect.bar").forEach((r) => r.addEventListener("click", () => onPick(days[+r.dataset.i])));
+  const missing = n - days.length;
+  $("missing").textContent = missing > 0 ? `空白處 = 今天沒查到完整價格的出發日（${missing} 天），明天會再查。` : "";
 }
 
 function trend(history) {
@@ -109,8 +120,8 @@ async function main() {
     <p class="dates">${md(best.depart)} 出發 → ${md(best.return)} 回程${best.holiday ? '<span class="tag holiday">連假</span>' : ""}</p>
     <a class="btn" href="${esc(best.link)}" target="_blank" rel="noopener">去 Google Flights 訂票</a>`;
 
-  const pick = (d) => { bars(days, d.depart, pick); detail(d); $("detail").scrollIntoView({ behavior: "smooth", block: "nearest" }); };
-  bars(days, null, pick);
+  const pick = (d) => { bars(days, d.depart, pick, data.last_depart); detail(d); $("detail").scrollIntoView({ behavior: "smooth", block: "nearest" }); };
+  bars(days, null, pick, data.last_depart);
   trend(data.history || []);
 }
 
