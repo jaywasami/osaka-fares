@@ -68,4 +68,3 @@ h2 { font-size: 1.05rem; margin: 0 0 2px; }
 .flight .p { font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .notice { background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; margin: 0 0 14px; }
 footer { padding: 4px 2px; }
-.flight .p .small { font-weight: 400; margin: 0; }

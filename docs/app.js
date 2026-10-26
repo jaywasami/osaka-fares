@@ -7,8 +7,6 @@ function md(iso, withDay = true) {
   const d = new Date(iso + "T00:00:00");
   return `${d.getMonth() + 1}/${d.getDate()}` + (withDay ? `(${WD[d.getDay()]})` : "");
 }
-const bagTotal = (d) => d.total_bag ?? d.total;
-let BAGS = 0;
 const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" role="img">${body}</svg>`;
 
 function niceTicks(lo, hi, n = 4) {
@@ -27,7 +25,7 @@ function bars(days, selected, onPick, lastDepart) {
   const DAY = 86400000, t0 = Date.parse(days[0].depart);
   const n = Math.round((Date.parse(lastDepart || days[days.length - 1].depart) - t0) / DAY) + 1;
   const slotOf = (iso) => Math.round((Date.parse(iso) - t0) / DAY);
-  const max = Math.max(...days.map(bagTotal));
+  const max = Math.max(...days.map((d) => d.total));
   const ticks = niceTicks(0, max);
   const top = ticks[ticks.length - 1];
   const y = (v) => T + (H - T - B) * (1 - v / top);
@@ -48,8 +46,8 @@ function bars(days, selected, onPick, lastDepart) {
   days.forEach((d, i) => {
     const x = cx(slotOf(d.depart)) - bw / 2;
     const cls = ["bar", d.holiday ? "holiday" : "", d.depart === selected ? "sel" : ""].join(" ");
-    g += `<rect class="${cls}" data-i="${i}" x="${x}" y="${y(bagTotal(d))}" width="${bw}" height="${y(0) - y(bagTotal(d))}" rx="2">` +
-      `<title>${md(d.depart)} ${money(bagTotal(d))}</title></rect>`;
+    g += `<rect class="${cls}" data-i="${i}" x="${x}" y="${y(d.total)}" width="${bw}" height="${y(0) - y(d.total)}" rx="2">` +
+      `<title>${md(d.depart)} ${money(d.total)}</title></rect>`;
   });
   $("bars").innerHTML = svg(W, H, g);
   $("bars").querySelectorAll("rect.hit, rect.bar").forEach((r) => r.addEventListener("click", () => onPick(days[+r.dataset.i])));
@@ -81,9 +79,9 @@ function trend(history) {
 
 function legList(title, list) {
   const rows = list.length ? list.map((f) => `<div class="flight">
-      <div><div>${esc(f.airline)}${f.lcc ? '<span class="tag lcc">廉航</span>' : ""}</div>
+      <div><div>${esc(f.airline)}${f.lcc ? '<span class="tag lcc">不含行李</span>' : ""}</div>
       <div class="t muted small">${esc(f.depart)} → ${esc(f.arrive)}</div></div>
-      <div class="p">${money(f.price_bag ?? f.price)}${f.lcc && f.price_bag ? `<div class="muted small">票價 ${money(f.price)} + 行李</div>` : ""}</div></div>`).join("") : `<p class="muted small">沒有符合條件的航班</p>`;
+      <div class="p">${money(f.price)}</div></div>`).join("") : `<p class="muted small">沒有符合條件的航班</p>`;
   return `<div><h3>${title}</h3>${rows}</div>`;
 }
 
@@ -91,8 +89,8 @@ function detail(d) {
   const el = $("detail");
   el.hidden = false;
   el.innerHTML = `<h2>${md(d.depart)} 出發 → ${md(d.return)} 回程${d.holiday ? '<span class="tag holiday">連假</span>' : ""}</h2>
-    <p class="muted small">含 ${BAGS} 件行李約 ${money(bagTotal(d))}・不含行李最低 ${money(d.total)}（此出發日歷史最低 ${money(d.lowest_ever)}）</p>
-    <div class="legs">${legList("去程 前 3 便宜（含行李）", d.out)}${legList("回程 前 3 便宜（含行李）", d.ret)}</div>
+    <p class="muted small">組合總價 ${money(d.total)}・此出發日歷史最低 ${money(d.lowest_ever)}</p>
+    <div class="legs">${legList("去程 前 3 便宜", d.out)}${legList("回程 前 3 便宜", d.ret)}</div>
     <p style="margin:14px 0 0"><a class="btn" href="${esc(d.link)}" target="_blank" rel="noopener">去 Google Flights 看這天</a></p>`;
 }
 
@@ -119,13 +117,10 @@ async function main() {
     trend(data.history || []);
     return;
   }
-  BAGS = data.checked_bags || 0;
-  document.querySelectorAll(".bags").forEach((el) => (el.textContent = BAGS));
-  const best = days.reduce((a, b) => (bagTotal(b) < bagTotal(a) ? b : a));
+  const best = days.reduce((a, b) => (b.total < a.total ? b : a));
   const target = data.target_price ? `・目標價 ${money(data.target_price)}` : "";
   hero.innerHTML = notice + `<p class="label">目前最便宜的出發日${target}</p>
-    <p class="price">${money(bagTotal(best))}${best.total <= best.lowest_ever ? '<span class="tag low">歷史最低</span>' : ""}</p>
-    <p class="muted small">含 ${BAGS} 件托運行李估算・不含行李 ${money(best.total)}</p>
+    <p class="price">${money(best.total)}${best.total <= best.lowest_ever ? '<span class="tag low">歷史最低</span>' : ""}</p>
     <p class="dates">${md(best.depart)} 出發 → ${md(best.return)} 回程${best.holiday ? '<span class="tag holiday">連假</span>' : ""}</p>
     <a class="btn" href="${esc(best.link)}" target="_blank" rel="noopener">去 Google Flights 訂票</a>`;
 

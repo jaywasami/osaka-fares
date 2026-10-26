@@ -28,8 +28,7 @@ SITE_JSON = ROOT / "docs" / "data.json"
 
 TZ = ZoneInfo("Asia/Taipei")
 FLIGHT_FIELDS = ["checked_on", "leg", "date", "airline", "depart", "arrive", "price", "lcc", "source"]
-DAILY_FIELDS = ["checked_on", "depart_date", "return_date", "total", "out_price", "ret_price", "source",
-                "total_bag"]
+DAILY_FIELDS = ["checked_on", "depart_date", "return_date", "total", "out_price", "ret_price", "source"]
 WEEKDAYS = "一二三四五六日"
 
 
@@ -159,18 +158,8 @@ class Fetcher:
         return res
 
 
-def with_bags(price: int, lcc, cfg: dict) -> int:
-    """Price including the planned checked bags: low-cost fares exclude them, so add an
-    estimated fee (config: checked_bags x lcc_bag_fee per one-way leg)."""
-    return price + (cfg["checked_bags"] * cfg["lcc_bag_fee"] if lcc else 0)
-
-
-def keep(flights: list[dict], cfg: dict) -> list[dict]:
-    """The 3 cheapest by fare plus the 3 cheapest with bags, cheapest-with-bags first."""
-    by_fare = sorted(flights, key=lambda f: f["price"])[:3]
-    by_bag = sorted(flights, key=lambda f: with_bags(f["price"], f["lcc"], cfg))[:3]
-    kept = by_bag + [f for f in by_fare if f not in by_bag]
-    return kept
+def top3(flights: list[dict]) -> list[dict]:
+    return sorted(flights, key=lambda f: f["price"])[:3]
 
 
 def run(args) -> int:
@@ -225,19 +214,17 @@ def run(args) -> int:
             if i or leg == "ret":
                 time.sleep(0 if args.fake else cfg["query_delay_seconds"])
             ok = [f for f in fetch.get(a, b, day) if allowed(f, cfg)]
-            legs[leg] = keep(ok, cfg)
+            legs[leg] = top3(ok)
             for f in legs[leg]:
                 new_flights.append({"checked_on": today, "leg": leg, "date": day, **{
                     k2: f[k2] for k2 in ("airline", "depart", "arrive", "price", "source")},
                     "lcc": int(f["lcc"])})
         if legs["out"] and legs["ret"]:
-            out_f = min(legs["out"], key=lambda f: f["price"])
-            ret_f = min(legs["ret"], key=lambda f: f["price"])
-            bag = sum(min(with_bags(f["price"], f["lcc"], cfg) for f in legs[x]) for x in ("out", "ret"))
+            out_p, ret_p = legs["out"][0]["price"], legs["ret"][0]["price"]
+            srcs = {legs["out"][0]["source"], legs["ret"][0]["source"]}
             new_daily.append({"checked_on": today, "depart_date": dep, "return_date": ret,
-                              "total": out_f["price"] + ret_f["price"], "out_price": out_f["price"],
-                              "ret_price": ret_f["price"], "source": "+".join(sorted({out_f["source"], ret_f["source"]})),
-                              "total_bag": bag})
+                              "total": out_p + ret_p, "out_price": out_p, "ret_price": ret_p,
+                              "source": "+".join(sorted(srcs))})
         print(f"{dep}: out {len(legs['out'])} / ret {len(legs['ret'])} flights"
               + (f", total {new_daily[-1]['total']}" if new_daily and new_daily[-1]["depart_date"] == dep else ""))
 
@@ -274,19 +261,19 @@ def run(args) -> int:
     target = cfg.get("target_price")
     alerted = state.setdefault("target_alerts", {})
     if target:
-        hits = [r for r in new_daily if r["total_bag"] < target
-                and r["total_bag"] < alerted.get(r["depart_date"], float("inf"))]
+        hits = [r for r in new_daily if r["total"] < target
+                and r["total"] < alerted.get(r["depart_date"], float("inf"))]
         for r in hits:
-            alerted[r["depart_date"]] = r["total_bag"]
+            alerted[r["depart_date"]] = r["total"]
         if hits:
-            messages.append(f"🎯 含行李低於目標價 {money(target)}\n" + "\n".join(
-                f"{tag(r['depart_date'])} {money(r['total_bag'])}" for r in sorted(hits, key=lambda r: r["total_bag"])))
+            messages.append(f"🎯 低於目標價 {money(target)}\n" + "\n".join(
+                f"{tag(r['depart_date'])} {money(r['total'])}" for r in sorted(hits, key=lambda r: r["total"])))
 
     # 3. Weekly report on Monday mornings.
     if now.weekday() == 0 and state.get("weekly_sent_on") != today and new_daily:
-        best = sorted(new_daily, key=lambda r: r["total_bag"])[:3]
-        messages.append(f"🗓️ 週報：目前最便宜的 3 個出發日（含 {cfg['checked_bags']} 件行李估算）\n" + "\n".join(
-            f"{tag(r['depart_date'])} → {md(r['return_date'])} {money(r['total_bag'])}" for r in best))
+        best = sorted(new_daily, key=lambda r: r["total"])[:3]
+        messages.append("🗓️ 週報：目前最便宜的 3 個出發日\n" + "\n".join(
+            f"{tag(r['depart_date'])} → {md(r['return_date'])} {money(r['total'])}" for r in best))
         state["weekly_sent_on"] = today
 
     # 4. Failure / fallback warnings.
@@ -333,16 +320,14 @@ def build_site(cfg: dict, state: dict, now: datetime, finished: bool) -> None:
 
     def leg_flights(leg: str, d: str) -> list[dict]:
         rows = [r for r in flights if r["checked_on"] == latest and r["leg"] == leg and r["date"] == d]
-        out = [{"airline": r["airline"], "depart": r["depart"], "arrive": r["arrive"], "price": int(r["price"]),
-                "price_bag": with_bags(int(r["price"]), r["lcc"] == "1", cfg), "lcc": r["lcc"] == "1"} for r in rows]
-        return sorted(out, key=lambda f: f["price_bag"])[:3]
+        return [{"airline": r["airline"], "depart": r["depart"], "arrive": r["arrive"],
+                 "price": int(r["price"]), "lcc": r["lcc"] == "1"} for r in sorted(rows, key=lambda r: int(r["price"]))]
 
     days = []
     for r in sorted((r for r in daily if r["checked_on"] == latest), key=lambda r: r["depart_date"]):
         d, rt = r["depart_date"], r["return_date"]
         days.append({
             "depart": d, "return": rt, "total": int(r["total"]), "lowest_ever": all_time[d],
-            "total_bag": int(r.get("total_bag") or r["total"]),
             "holiday": d in holidays, "out": leg_flights("out", d), "ret": leg_flights("ret", rt),
             "link": sources.google_flights_link(cfg["origin"], cfg["destination"], d, rt,
                                                 cfg["adults"], cfg["children"]),
@@ -355,7 +340,6 @@ def build_site(cfg: dict, state: dict, now: datetime, finished: bool) -> None:
         "passengers": f"{cfg['adults']} 大 {cfg['children']} 小",
         "trip_days": cfg["trip_days"],
         "last_depart": cfg["last_depart"],
-        "checked_bags": cfg["checked_bags"],
         "target_price": cfg.get("target_price"),
         "enabled": cfg["enabled"],
         "finished": finished,

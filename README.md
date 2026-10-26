@@ -18,7 +18,6 @@
 
 - **暫停追蹤（買票後）**：把 `config.json` 的 `"enabled"` 改成 `false`。資料與網頁保留。
 - **設定目標價**：把 `"target_price"` 改成數字，例如 `30000`（2 大 1 小來回總價，新台幣）。
-- **行李估算**：`checked_bags`（托運件數，目前 2）與 `lcc_bag_fee`（每件每段估算費用，目前 NT$1,000，依虎航 tigersmart 與 tigerlight 差價）。廉航價格會加上「件數 × 費用」，網頁排名與週報、目標價都用含行李價格；新低價通知仍用原始票價。
 - **允許 Ignav 付費**：免費 1,000 次用完後會暫停備援並通知；同意付費才把 `"ignav_allow_paid"` 改成 `true`。
 - **手動執行／測試 Telegram**：Actions → 每日查價 → Run workflow，勾選「順便送一則 Telegram 測試訊息」。
 
