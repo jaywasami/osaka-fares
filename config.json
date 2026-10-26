@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "origin": "TPE",
+  "destination": "KIX",
+  "first_depart": "2027-04-01",
+  "last_depart": "2027-04-26",
+  "trip_days": 4,
+  "adults": 2,
+  "children": 1,
+  "earliest_departure": "06:00",
+  "latest_arrival": "23:00",
+  "target_price": null,
+  "new_low_threshold": 0.03,
+  "holidays": ["2027-04-02", "2027-04-03", "2027-04-04", "2027-04-05", "2027-04-06"],
+  "query_delay_seconds": 4,
+  "ignav_free_quota": 1000,
+  "ignav_warn_at": 900,
+  "ignav_allow_paid": false
+}

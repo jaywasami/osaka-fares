@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>台北—大阪機票</title>
+<meta name="theme-color" content="#0f6fde">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="大阪機票">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>台北—大阪機票</h1>
+    <p id="meta" class="muted">載入中…</p>
+  </header>
+
+  <section id="hero" class="card hero" hidden></section>
+
+  <section class="card">
+    <h2>每個出發日的最低總價</h2>
+    <p class="muted small">5 天 4 夜、去回程各取最便宜直飛自由組合。<span class="swatch holiday"></span>連假　點長條看航班</p>
+    <div id="bars" class="chart"></div>
+  </section>
+
+  <section id="detail" class="card" hidden></section>
+
+  <section class="card">
+    <h2>整體最低價走勢</h2>
+    <p class="muted small">每次查詢當天所有出發日中的最低總價</p>
+    <div id="trend" class="chart"></div>
+  </section>
+
+  <footer class="muted small">
+    價格來自 Google Flights（備援 Ignav），2 大 1 小總價、新台幣。廉航票價不含行李。實際價格以訂票時為準。
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
