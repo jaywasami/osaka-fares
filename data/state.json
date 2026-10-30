@@ -1,8 +1,8 @@
 {
- "ignav_calls": 1,
+ "ignav_calls": 2,
  "target_alerts": {},
  "weekly_sent_on": "2026-10-26",
  "fail_days": 0,
- "on_fallback": false,
- "last_run": "2026-10-29T09:55+08:00"
+ "on_fallback": true,
+ "last_run": "2026-10-30T10:07+08:00"
 }
