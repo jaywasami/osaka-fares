@@ -306,7 +306,8 @@ def run(args) -> int:
 
 
 def build_site(cfg: dict, state: dict, now: datetime, finished: bool) -> None:
-    daily = read_csv(DAILY_CSV)
+    # Only the departure dates currently tracked; rows for dates dropped from config stay in the CSV.
+    daily = [r for r in read_csv(DAILY_CSV) if cfg["first_depart"] <= r["depart_date"] <= cfg["last_depart"]]
     flights = read_csv(FLIGHTS_CSV)
     latest = max((r["checked_on"] for r in daily), default=None)
     holidays = set(cfg["holidays"])
