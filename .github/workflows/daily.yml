@@ -1,8 +1,9 @@
 name: 每日查價
 
 on:
-  schedule:
-    - cron: "37 22 * * *"   # 06:37 台灣時間
+  # 已停止每日排程（使用者取消追蹤）。要恢復就把下面兩行的 # 拿掉，並把 config.json 的 enabled 改回 true。
+  # schedule:
+  #   - cron: "37 22 * * *"   # 06:37 台灣時間
   workflow_dispatch:
     inputs:
       test_message:

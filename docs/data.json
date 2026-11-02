@@ -6,7 +6,7 @@
  "trip_days": 4,
  "last_depart": "2027-04-18",
  "target_price": null,
- "enabled": true,
+ "enabled": false,
  "finished": false,
  "on_fallback": false,
  "days": [

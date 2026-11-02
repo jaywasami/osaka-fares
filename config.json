@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "origin": "TPE",
   "destination": "KIX",
   "first_depart": "2027-04-12",
